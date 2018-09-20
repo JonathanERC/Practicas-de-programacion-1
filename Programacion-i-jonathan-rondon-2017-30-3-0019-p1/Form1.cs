@@ -45,7 +45,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             mult = num1 * num2;
             div = num1 / num2;
             pot = Math.Pow(num1, num2);
-            rai = Math.Pow(num1, (1/num2));
+            rai = Math.Pow(num1, (1 / num2));
             //salida de info
             txtsum.Text = Convert.ToString(sum);
             txtrest.Text = Convert.ToString(rest);
@@ -53,7 +53,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             txtmult.Text = Convert.ToString(mult);
             txtpot.Text = Convert.ToString(pot);
             txtrai.Text = Convert.ToString(rai);
-            
+
         }
 
         private void btncln_Click(object sender, EventArgs e)
@@ -70,7 +70,38 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btnsumar_Click(object sender, EventArgs e)
         {
-            txtresultado.Text = Convert.ToString("1");
+            //txtresultado.Text = Convert.ToString("1");
+        }
+
+        private void btncalcular_Click(object sender, EventArgs e)
+        {
+            //declarar variables
+            double capital, razon, tiempo, interes, monto;
+
+            //entrada de datos
+            capital = Convert.ToDouble(txtcapital.Text);
+            razon = Convert.ToDouble(txtrazon.Text);
+            tiempo = Convert.ToDouble(txttiempo.Text);
+
+            //proceso
+            monto = Math.Pow((1 + razon), tiempo) * capital;
+            interes = monto - capital;
+
+            //salida
+            txttotalinteres.Text = Convert.ToString(interes);
+            txtmonto.Text = Convert.ToString(monto);
+
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtmonto.Clear();
+            txttotalinteres.Clear();
+            txtcapital.Clear();
+            txtrazon.Clear();
+            txttiempo.Clear();
+
         }
     }
+        
 }

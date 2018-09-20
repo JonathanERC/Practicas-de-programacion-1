@@ -51,10 +51,27 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtcapital = new System.Windows.Forms.TextBox();
+            this.txtrazon = new System.Windows.Forms.TextBox();
+            this.txttiempo = new System.Windows.Forms.TextBox();
+            this.btncalcular = new System.Windows.Forms.Button();
+            this.btnlimpiar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txttotalinteres = new System.Windows.Forms.TextBox();
+            this.txtmonto = new System.Windows.Forms.TextBox();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox7
@@ -266,6 +283,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -273,6 +292,135 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Problema";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnlimpiar);
+            this.groupBox1.Controls.Add(this.btncalcular);
+            this.groupBox1.Controls.Add(this.txttiempo);
+            this.groupBox1.Controls.Add(this.txtrazon);
+            this.groupBox1.Controls.Add(this.txtcapital);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(415, 96);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Interés";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtmonto);
+            this.groupBox2.Controls.Add(this.txttotalinteres);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(8, 109);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(415, 145);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Capital:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Razón:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tiempo:";
+            // 
+            // txtcapital
+            // 
+            this.txtcapital.Location = new System.Drawing.Point(55, 15);
+            this.txtcapital.Name = "txtcapital";
+            this.txtcapital.Size = new System.Drawing.Size(100, 20);
+            this.txtcapital.TabIndex = 1;
+            // 
+            // txtrazon
+            // 
+            this.txtrazon.Location = new System.Drawing.Point(55, 41);
+            this.txtrazon.Name = "txtrazon";
+            this.txtrazon.Size = new System.Drawing.Size(100, 20);
+            this.txtrazon.TabIndex = 1;
+            // 
+            // txttiempo
+            // 
+            this.txttiempo.Location = new System.Drawing.Point(55, 67);
+            this.txttiempo.Name = "txttiempo";
+            this.txttiempo.Size = new System.Drawing.Size(100, 20);
+            this.txttiempo.TabIndex = 1;
+            // 
+            // btncalcular
+            // 
+            this.btncalcular.Location = new System.Drawing.Point(241, 22);
+            this.btncalcular.Name = "btncalcular";
+            this.btncalcular.Size = new System.Drawing.Size(75, 23);
+            this.btncalcular.TabIndex = 2;
+            this.btncalcular.Text = "Calcular";
+            this.btncalcular.UseVisualStyleBackColor = true;
+            this.btncalcular.Click += new System.EventHandler(this.btncalcular_Click);
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.Location = new System.Drawing.Point(241, 64);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnlimpiar.TabIndex = 2;
+            this.btnlimpiar.Text = "Limpiar";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(109, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Total Interés:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(109, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Monto Final:";
+            // 
+            // txttotalinteres
+            // 
+            this.txttotalinteres.Location = new System.Drawing.Point(184, 42);
+            this.txttotalinteres.Name = "txttotalinteres";
+            this.txttotalinteres.Size = new System.Drawing.Size(100, 20);
+            this.txttotalinteres.TabIndex = 1;
+            // 
+            // txtmonto
+            // 
+            this.txtmonto.Location = new System.Drawing.Point(184, 77);
+            this.txtmonto.Name = "txtmonto";
+            this.txtmonto.Size = new System.Drawing.Size(100, 20);
+            this.txtmonto.TabIndex = 1;
             // 
             // Form1
             // 
@@ -290,6 +438,11 @@
             this.groupBox8.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -319,6 +472,20 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnlimpiar;
+        private System.Windows.Forms.Button btncalcular;
+        private System.Windows.Forms.TextBox txttiempo;
+        private System.Windows.Forms.TextBox txtrazon;
+        private System.Windows.Forms.TextBox txtcapital;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtmonto;
+        private System.Windows.Forms.TextBox txttotalinteres;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
