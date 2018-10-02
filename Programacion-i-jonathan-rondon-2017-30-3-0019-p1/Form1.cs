@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 {
@@ -255,7 +256,22 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-
+            //Codigo para hacer el cuadro de guardado
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "Cálculo.txt";
+            savefile.Filter = "Text files (*.txt)|*.txt";
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(savefile.FileName))
+                    sw.WriteLine(
+                        "El primer valor fue: " + num1 + Environment.NewLine +
+                        "El segundo valor fue: " + num2 + Environment.NewLine +
+                        "El operador utilizado fue: " + op + Environment.NewLine +
+                        "El resultado fue: " + result
+                        );
+                //Esto abre el archivo una vez guardado
+                System.Diagnostics.Process.Start(savefile.FileName);
+            }
         }
 
         private void btnpunto_Click(object sender, EventArgs e)
