@@ -37,37 +37,12 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btncalc_Click(object sender, EventArgs e)
         {
-            ////declarar variables
-            //double num1, num2, sum, rest, mult, div, pot, rai;
-            ////entrada de datos
-            //num1 = double.Parse(txtvalor1.Text);
-            //num2 = Convert.ToDouble(txtvalor2.Text);
-            ////proceso
-            //sum = num1 + num2;
-            //rest = num1 - num2;
-            //mult = num1 * num2;
-            //div = num1 / num2;
-            //pot = Math.Pow(num1, num2);
-            //rai = Math.Pow(num1, (1/num2));
-            ////salida de info
-            //txtsum.Text = Convert.ToString(sum);
-            //txtrest.Text = Convert.ToString(rest);
-            //txtdiv.Text = Convert.ToString(rest);
-            //txtmult.Text = Convert.ToString(mult);
-            //txtpot.Text = Convert.ToString(pot);
-            //txtrai.Text = Convert.ToString(rai);            
+
         }
 
         private void btncln_Click(object sender, EventArgs e)
         {
-            //txtvalor1.Clear();
-            //txtvalor2.Clear();
-            //txtsum.Clear();
-            //txtrest.Clear();
-            //txtmult.Clear();
-            //txtdiv.Clear();
-            //txtpot.Clear();
-            //txtrai.Clear();
+
         }
 
         private void btnsumar_Click(object sender, EventArgs e)
@@ -241,7 +216,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btnborrar_Click(object sender, EventArgs e)
         {          
-            btnpunto.Enabled = txtvalor.Text.Contains(".") && txtvalor.Text != "";
+
             
             if (txtvalor.Text == "")
             {
@@ -252,6 +227,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             {
                 txtvalor.Text = txtvalor.Text.Remove(txtvalor.Text.Length - 1, 1);
             }
+            btnpunto.Enabled = !txtvalor.Text.Contains(".") && txtvalor.Text != "";
         }
 
         private void btnprint_Click(object sender, EventArgs e)
@@ -272,6 +248,289 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
                 //Esto abre el archivo una vez guardado
                 System.Diagnostics.Process.Start(savefile.FileName);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn1salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lstb1actividades_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstb1actividades_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt1apellido1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt1nombre_Enter(object sender, EventArgs e)
+        {
+            if (txt1nombre.Text == "Nombre")
+            {
+                txt1nombre.Text = "";
+                txt1nombre.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt1nombre_Leave(object sender, EventArgs e)
+        {
+            if (txt1nombre.Text == "")
+            {
+                txt1nombre.Text = "Nombre";
+                txt1nombre.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txt1apellido1_Enter(object sender, EventArgs e)
+        {
+            if (txt1apellido1.Text == "P. Apellido")
+            {
+                txt1apellido1.Text = "";
+                txt1apellido1.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt1apellido1_Leave(object sender, EventArgs e)
+        {
+            if (txt1apellido1.Text == "")
+            {
+                txt1apellido1.Text = "P. Apellido";
+                txt1apellido1.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txt1apellido2_Enter(object sender, EventArgs e)
+        {
+            if (txt1apellido2.Text == "S. Apellido")
+            {
+                txt1apellido2.Text = "";
+                txt1apellido2.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt1apellido2_Leave(object sender, EventArgs e)
+        {
+            if (txt1apellido2.Text == "")
+            {
+                txt1apellido2.Text = "S. Apellido";
+                txt1apellido2.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txt1descripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt1descripcion_Leave(object sender, EventArgs e)
+        {
+            if (txt1descripcion.Text == "")
+            {
+                txt1descripcion.Text = "Descripción";
+                txt1descripcion.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txt1descripcion_Enter(object sender, EventArgs e)
+        {
+            if (txt1descripcion.Text == "Descripción")
+            {
+                txt1descripcion.Text = "";
+                txt1descripcion.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt1apellido2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn1guardar_Click(object sender, EventArgs e)
+        {
+            //Codigo para hacer el cuadro de guardado
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "Datos del usuario.txt";
+            savefile.Filter = "Text files (*.txt)|*.txt";
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(savefile.FileName))
+                    sw.WriteLine(
+                        "Nombre: " + txt1nombre + Environment.NewLine +
+                        "Primer Apellido: " + txt1apellido1 + Environment.NewLine +
+                        "Segundo Apellido: " + txt1apellido2 + Environment.NewLine +
+                        "Nacionalidad: " + cb1nacionalidad + Environment.NewLine +
+                        "Sexo: " + cb1nacionalidad + Environment.NewLine +
+                        "Fecha de Nacimiento: " + date1fecha + Environment.NewLine +
+                        "Descripción: " + txt1descripcion + Environment.NewLine +
+                        "Preferencia: " + lstb1actividades
+                        );
+                //Esto abre el archivo una vez guardado
+                System.Diagnostics.Process.Start(savefile.FileName);
+            }
+        }
+
+        private void btn1nuevo_Click(object sender, EventArgs e)
+        {
+            txt1nombre.Clear();
+            txt1apellido1.Clear();
+            txt1apellido2.Clear();
+            //cb1nacionalidad.Clear();
+            //date1fecha.Clear();
+            txt1descripcion.Clear();
+            //lstb1actividades.Clear();
+            //rdb1masculino.Clear();
+            //rdb2.Clear();
+
+        }
+
+        private void rdb1masculino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdb1femenino_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdb1otro_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn2calc_Click(object sender, EventArgs e)
+        {
+            //declarar variables
+            double num1, num2, sum, rest, mult, div, pot, rai;
+            //entrada de datos
+            num1 = double.Parse(txt2valor1.Text);
+            num2 = Convert.ToDouble(txt2valor2.Text);
+            //proceso
+            sum = num1 + num2;
+            rest = num1 - num2;
+            mult = num1 * num2;
+            div = num1 / num2;
+            pot = Math.Pow(num1, num2);
+            rai = Math.Pow(num1, (1 / num2));
+            //salida de info
+            txt2sum.Text = Convert.ToString(sum);
+            txt2rest.Text = Convert.ToString(rest);
+            txt2div.Text = Convert.ToString(rest);
+            txt2mult.Text = Convert.ToString(mult);
+            txt2pot.Text = Convert.ToString(pot);
+            txt2rai.Text = Convert.ToString(rai);
+        }
+
+        private void btn2cln_Click(object sender, EventArgs e)
+        {
+            txt2valor1.Clear();
+            txt2valor2.Clear();
+            txt2sum.Clear();
+            txt2rest.Clear();
+            txt2mult.Clear();
+            txt2div.Clear();
+            txt2pot.Clear();
+            txt2rai.Clear();
+        }
+
+        private void btn3cls_Click(object sender, EventArgs e)
+        {
+            txt3capital.Clear();
+            txt3interes.Clear();
+            txt3monto.Clear();
+            txt3razon.Clear();
+            txt3tiempo.Clear();
+        }
+
+        private void btn3calc_Click(object sender, EventArgs e)
+        {
+            //Declaraciñon de variables
+            double capital, razon, tiempo, interes, monto;
+            //Entrada de datos
+            capital = double.Parse(txt3capital.Text);
+            razon = double.Parse(txt3razon.Text);
+            tiempo = double.Parse(txt3tiempo.Text);
+            //Proceso
+            monto = Math.Pow((1 + razon), tiempo) * capital;
+            interes = monto - capital;
+            //Salida de la información
+            txt3monto.Text = Convert.ToString(monto);
+            txt3interes.Text = Convert.ToString(interes);
+        }
+
+        private void dud4hijos_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn4calcular_Click(object sender, EventArgs e)
+        {
+            //Declarar variables
+            int horasextras, horasnormales;
+            double pagohnormal, pagohextra, sueldobruto, sueldoneto, bonificacion;
+            byte nhijos;
+            Boolean marcado;
+            //Entrada de datos
+            horasnormales = Convert.ToInt32(txt4horasnormales.Text);
+            horasextras = Convert.ToInt32(txt4horasextras.Text);
+            pagohnormal = Convert.ToDouble(txt4pagonormal.Text);
+            pagohextra = Convert.ToDouble(txt4horasextras.Text);
+            nhijos = Convert.ToByte(dud4hijos.Value);
+            marcado = Convert.ToBoolean(chk4bonificacion.Checked);
+            //Inicializar
+            bonificacion = 0.0;
+            //Proceso
+            sueldobruto = (horasnormales * pagohnormal) + (horasextras * pagohextra);
+            //Evaluar bonificación
+            if (marcado == true)
+            {
+                bonificacion = nhijos * 20;
+            }
+            sueldoneto = sueldobruto + bonificacion;
+            //Salida
+            txt4sueldobruto.Text = "$. "+Convert.ToString(sueldobruto);
+            txt4bonificacion.Text = "$. " + Convert.ToString(bonificacion);
+            txt4sueldoneto.Text = "$. " + Convert.ToString(sueldoneto);
+        }
+
+        private void btn4salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn4nuevo_Click(object sender, EventArgs e)
+        {
+            txt4bonificacion.Clear();
+            txt4horasextras.Clear();
+            txt4horasnormales.Clear();
+            txt4pagohora.Clear();
+            txt4pagonormal.Clear();
+            txt4sueldobruto.Clear();
+            txt4sueldoneto.Clear();
+            chk4bonificacion.Checked = false;
+            dud4hijos.Value = 0;
         }
 
         private void btnpunto_Click(object sender, EventArgs e)
@@ -296,6 +555,12 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btncalc_Click_1(object sender, EventArgs e)
         {
+            if (txtvalor.Text == "")
+            {
+                txtvalor.Text = "Por favor introducir los valores.";
+            }
+            else
+            {
             num2 = Convert.ToDouble(txtvalor.Text);
             if (op == "+")
             {
@@ -319,7 +584,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             {
                 if (num2 == 0)
                 {
-                    txtvalor.Text = "No se puede dividir entre cero";
+                    txtvalor.Text = "No se puede dividir entre cero.";
                 }
                 else
                 {
@@ -327,6 +592,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
                     txtvalor.Text = Convert.ToString(result);
                     num1 = result;
                 }
+            }
             }
         }
     }
