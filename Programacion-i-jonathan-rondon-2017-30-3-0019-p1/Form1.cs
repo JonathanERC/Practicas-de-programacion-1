@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 {
@@ -15,9 +16,13 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
     {
         double num1, num2, result;
         string op;
+        private SoundPlayer _soundPlayer;
         public Form1()
         {
             InitializeComponent();
+            px9cuadrado.Visible = false;
+            px9rectangulo.Visible = false;
+            _soundPlayer = new SoundPlayer("beat.wav");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -252,7 +257,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -367,25 +372,52 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         }
 
+        string genero;
         private void btn1guardar_Click(object sender, EventArgs e)
         {
+            //Declaracion de variables
+            string nombre, apellido1, apellido2, descripcion, fecha, nacionalidad, preferencias;
+            Boolean marcado;
+            //conversion de variables
+            nombre = Convert.ToString(txt1nombre.Text);
+            apellido1 = Convert.ToString(txt1apellido1.Text);
+            apellido2 = Convert.ToString(txt1apellido2.Text);
+            descripcion = Convert.ToString(txt1descripcion.Text);
+            fecha = Convert.ToString(date1fecha.Text);
+            nacionalidad = Convert.ToString(cb1nacionalidad.Text);
+            preferencias = Convert.ToString(lstb1actividades.Text);
+            marcado = Convert.ToBoolean(chk1datos.Checked);
+            //genero = Convert.ToString();
+
             //Codigo para hacer el cuadro de guardado
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = "Datos del usuario.txt";
             savefile.Filter = "Text files (*.txt)|*.txt";
+            StreamWriter sw;
             if (savefile.ShowDialog() == DialogResult.OK)
             {
-                using (StreamWriter sw = new StreamWriter(savefile.FileName))
-                    sw.WriteLine(
-                        "Nombre: " + txt1nombre + Environment.NewLine +
-                        "Primer Apellido: " + txt1apellido1 + Environment.NewLine +
-                        "Segundo Apellido: " + txt1apellido2 + Environment.NewLine +
-                        "Nacionalidad: " + cb1nacionalidad + Environment.NewLine +
-                        "Sexo: " + cb1nacionalidad + Environment.NewLine +
-                        "Fecha de Nacimiento: " + date1fecha + Environment.NewLine +
-                        "Descripción: " + txt1descripcion + Environment.NewLine +
-                        "Preferencia: " + lstb1actividades
-                        );
+                //using (sw = new StreamWriter(savefile.FileName))
+                //    sw.WriteLine( 
+                //        "Nombre: " + nombre + Environment.NewLine +
+                //        "Primer Apellido: " + apellido1 + Environment.NewLine +
+                //        "Segundo Apellido: " + apellido2 + Environment.NewLine +
+                //        "Nacionalidad: " + nacionalidad + Environment.NewLine +
+                //        "Sexo: " + genero + Environment.NewLine +
+                //        "Descripción: " + descripcion + Environment.NewLine +
+                //        "Preferencia: " + preferencias + Environment.NewLine);
+                //if (marcado)
+                //{
+                    using (sw = new StreamWriter(savefile.FileName))
+                        sw.WriteLine(
+                            "Nombre: " + nombre + Environment.NewLine +
+                            "Primer Apellido: " + apellido1 + Environment.NewLine +
+                            "Segundo Apellido: " + apellido2 + Environment.NewLine +
+                            "Nacionalidad: " + nacionalidad + Environment.NewLine +
+                            "Sexo: " + genero + Environment.NewLine +
+                            "Descripción: " + descripcion + Environment.NewLine +
+                            "Preferencia: " + preferencias + Environment.NewLine + 
+                            (chk1datos.Checked ? "Fecha de Nacimiento: " + fecha : String.Empty));
+                //}
                 //Esto abre el archivo una vez guardado
                 System.Diagnostics.Process.Start(savefile.FileName);
             }
@@ -396,28 +428,37 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             txt1nombre.Clear();
             txt1apellido1.Clear();
             txt1apellido2.Clear();
-            //cb1nacionalidad.Clear();
-            //date1fecha.Clear();
+            cb1nacionalidad.ResetText();
+            date1fecha.ResetText();
             txt1descripcion.Clear();
-            //lstb1actividades.Clear();
-            //rdb1masculino.Clear();
-            //rdb2.Clear();
-
+            chk1datos.Checked = false;
+            lstb1actividades.ResetText();
+            rdb1masculino.Checked = false;
+            rdb1femenino.Checked = false;
+            rdb1otro.Checked = false;
+            txt1nombre.Text = "Nombre";
+            txt1nombre.ForeColor = Color.Silver;
+            txt1descripcion.Text = "Descripción";
+            txt1descripcion.ForeColor = Color.Silver;
+            txt1apellido2.Text = "S. Apellido";
+            txt1apellido2.ForeColor = Color.Silver;
+            txt1apellido1.Text = "P. Apellido";
+            txt1apellido1.ForeColor = Color.Silver;
         }
 
         private void rdb1masculino_CheckedChanged(object sender, EventArgs e)
         {
-
+            genero = "Masculino";
         }
 
         private void rdb1femenino_CheckedChanged(object sender, EventArgs e)
         {
-
+            genero = "Femenino";
         }
 
         private void rdb1otro_CheckedChanged(object sender, EventArgs e)
         {
-
+            genero = "Otro";
         }
 
         private void btn2calc_Click(object sender, EventArgs e)
@@ -533,6 +574,217 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             dud4hijos.Value = 0;
         }
 
+        private void btn9calcular_Click(object sender, EventArgs e)
+        {
+            //Declarar variables
+            double ladoa, ladob, area, perimetro;
+            //Entrada de datos
+            ladoa = Convert.ToDouble(txt9ladoa.Text);
+            ladob = Convert.ToDouble(txt9ladob.Text);
+            //Proceso
+            //Evaluar si es un cuadrado o un rectangulo
+            if (ladoa == ladob)
+            {
+                px9cuadrado.Visible = true;
+                px9rectangulo.Visible = false;
+            }
+            else
+            {
+                px9cuadrado.Visible = false;
+                px9rectangulo.Visible = true;
+            }
+            //Calcular el área y perímetro
+            area = ladoa * ladob;
+            perimetro = 2 * (ladoa + ladob);
+            //Salida de datos
+            txt9area.Text = Convert.ToString(area);
+            txt9perimetro.Text = Convert.ToString(perimetro);
+        }
+
+        private void btn9salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn9nuevo_Click(object sender, EventArgs e)
+        {
+            txt9area.Clear();
+            txt9ladoa.Clear();
+            txt9ladob.Clear();
+            txt9perimetro.Clear();
+            px9rectangulo.Visible = false;
+            px9cuadrado.Visible = false;
+        }
+
+        private void btn5calcular_Click(object sender, EventArgs e)
+        {
+            //Declaracion de variables
+            byte temperatura;
+            string clima;
+            //Entrada de datos
+            temperatura = Convert.ToByte(txt5temperatura.Text);
+            //Proceso
+            if (temperatura < 10)
+            {
+                clima = "Frio";
+            }
+            else if (temperatura >=10 && temperatura <=20)
+            {
+                clima = "Nublado";
+            }
+            else if (temperatura >20 && temperatura <= 30)
+            {
+                clima = "Calor";
+            }
+            else
+            {
+                clima = "Tropical";
+            }
+            //Salida de datos
+            txt5clima.Text = clima;
+        }
+
+        private void btn5nuevo_Click(object sender, EventArgs e)
+        {
+            txt5clima.Clear();
+            txt5temperatura.Clear();
+            txt5temperatura.Text = "Expresado en Cº";
+            txt5temperatura.ForeColor = Color.Silver;
+        }
+
+        private void btn5salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //Declarar variables
+            byte numero;
+            string dia;
+            //Entrada de datos
+            numero = Convert.ToByte(txt6numero.Text);
+            //Proceso
+            switch (numero)
+            {
+                case 1:
+                    dia = "Lunes";
+                    break;
+                case 2:
+                    dia = "Martes";
+                    break;
+                case 3:
+                    dia = "Miercoles";
+                    break;
+                case 4:
+                    dia = "Jueves";
+                    break;
+                case 5:
+                    dia = "Viernes";
+                    break;
+                case 6:
+                    dia = "Sabado";
+                    break;
+                case 7:
+                    dia = "Domingo";
+                    break;
+                default:
+                    dia = "Ingrese un numero del 1 al 7";
+                    break;
+            }
+            //Salida de datos
+            txt6semana.Text = dia;
+        }
+
+        private void btn6nuevo_Click(object sender, EventArgs e)
+        {
+            txt6numero.Clear();
+            txt6semana.Clear();
+        }
+
+        private void btn6salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl7timer.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private int num7num = 0;
+
+        private void tm7timer2_Tick(object sender, EventArgs e)
+        {
+            num7num = num7num + 1;
+            if (num7num % 2==0)
+            {
+                lbl7rojo.Visible = true;
+                lbl7azul.Visible = false;
+            }
+            else
+            {
+                lbl7rojo.Visible = false;
+                lbl7azul.Visible = true;
+            }
+        }
+
+        private void btn7comenzar_Click(object sender, EventArgs e)
+        {
+            tm7timer2.Enabled = true;
+            _soundPlayer.PlayLooping();
+        }
+
+        private void btn7parar_Click(object sender, EventArgs e)
+        {
+            tm7timer2.Enabled = false;
+            _soundPlayer.Stop();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion;
+            opcion = MessageBox.Show("¿Desea salir de la aplicación?", "Salir del Programa", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            if (opcion == DialogResult.OK)
+            {
+                Close();
+            }
+        }
+
+        private void btn8datos_Click(object sender, EventArgs e)
+        {
+            //Declarar variables
+            string nombre;
+            //Inicio
+            nombre = Microsoft.VisualBasic.Interaction.InputBox("Ingrese su nombre de usuario:", "Registro de Datos", "Usuario", 100,0);
+            if (nombre != "admin")
+            {
+                MessageBox.Show("El nombre de usuario: '" + nombre +"' no es un nombre de usuario valido.", "Error en Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Bienvenido: " + nombre, "Sistema Administrativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txt5temperatura_Enter(object sender, EventArgs e)
+        {
+            if (txt5temperatura.Text == "Expresado en Cº")
+            {
+                txt5temperatura.Text = "";
+                txt5temperatura.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt5temperatura_Leave(object sender, EventArgs e)
+        {
+            if (txt5temperatura.Text == "")
+            {
+                txt5temperatura.Text = "Expresado en Cº";
+                txt5temperatura.ForeColor = Color.Silver;
+            }
+        }
+
         private void btnpunto_Click(object sender, EventArgs e)
         {
             if (txtvalor.Text == "")
@@ -555,7 +807,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 
         private void btncalc_Click_1(object sender, EventArgs e)
         {
-            if (txtvalor.Text == "")
+            if (txtvalor.Text == "" || txtvalor.Text == "Por favor introducir los valores.")
             {
                 txtvalor.Text = "Por favor introducir los valores.";
             }
