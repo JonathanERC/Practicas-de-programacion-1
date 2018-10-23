@@ -61,15 +61,16 @@
             this.lstb1actividades = new System.Windows.Forms.ListBox();
             this.txt1descripcion = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdb1masculino = new System.Windows.Forms.RadioButton();
+            this.rdb1femenino = new System.Windows.Forms.RadioButton();
+            this.rdb1otro = new System.Windows.Forms.RadioButton();
             this.chk1datos = new System.Windows.Forms.CheckBox();
             this.date1fecha = new System.Windows.Forms.DateTimePicker();
             this.cb1nacionalidad = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rdb1otro = new System.Windows.Forms.RadioButton();
-            this.rdb1femenino = new System.Windows.Forms.RadioButton();
-            this.rdb1masculino = new System.Windows.Forms.RadioButton();
             this.txt1apellido2 = new System.Windows.Forms.TextBox();
             this.txt1apellido1 = new System.Windows.Forms.TextBox();
             this.txt1nombre = new System.Windows.Forms.TextBox();
@@ -97,12 +98,12 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txt3monto = new System.Windows.Forms.TextBox();
+            this.btn3calc = new System.Windows.Forms.Button();
             this.txt3interes = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn3cls = new System.Windows.Forms.Button();
-            this.btn3calc = new System.Windows.Forms.Button();
             this.txt3tiempo = new System.Windows.Forms.TextBox();
             this.txt3razon = new System.Windows.Forms.TextBox();
             this.txt3capital = new System.Windows.Forms.TextBox();
@@ -176,13 +177,13 @@
             this.btn8salir = new System.Windows.Forms.Button();
             this.tm7timer1 = new System.Windows.Forms.Timer(this.components);
             this.tm7timer2 = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -206,7 +207,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.px9cuadrado)).BeginInit();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -570,6 +570,62 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Usuario";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.rdb1masculino);
+            this.panel1.Controls.Add(this.rdb1femenino);
+            this.panel1.Controls.Add(this.rdb1otro);
+            this.panel1.Location = new System.Drawing.Point(119, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(75, 86);
+            this.panel1.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sexo";
+            // 
+            // rdb1masculino
+            // 
+            this.rdb1masculino.AutoSize = true;
+            this.rdb1masculino.Location = new System.Drawing.Point(3, 16);
+            this.rdb1masculino.Name = "rdb1masculino";
+            this.rdb1masculino.Size = new System.Drawing.Size(73, 17);
+            this.rdb1masculino.TabIndex = 1;
+            this.rdb1masculino.TabStop = true;
+            this.rdb1masculino.Text = "Masculino";
+            this.rdb1masculino.UseVisualStyleBackColor = true;
+            this.rdb1masculino.CheckedChanged += new System.EventHandler(this.rdb1masculino_CheckedChanged);
+            // 
+            // rdb1femenino
+            // 
+            this.rdb1femenino.AutoSize = true;
+            this.rdb1femenino.Location = new System.Drawing.Point(3, 39);
+            this.rdb1femenino.Name = "rdb1femenino";
+            this.rdb1femenino.Size = new System.Drawing.Size(71, 17);
+            this.rdb1femenino.TabIndex = 1;
+            this.rdb1femenino.TabStop = true;
+            this.rdb1femenino.Text = "Femenino";
+            this.rdb1femenino.UseVisualStyleBackColor = true;
+            this.rdb1femenino.CheckedChanged += new System.EventHandler(this.rdb1femenino_CheckedChanged);
+            // 
+            // rdb1otro
+            // 
+            this.rdb1otro.AutoSize = true;
+            this.rdb1otro.Location = new System.Drawing.Point(3, 62);
+            this.rdb1otro.Name = "rdb1otro";
+            this.rdb1otro.Size = new System.Drawing.Size(45, 17);
+            this.rdb1otro.TabIndex = 1;
+            this.rdb1otro.TabStop = true;
+            this.rdb1otro.Text = "Otro";
+            this.rdb1otro.UseVisualStyleBackColor = true;
+            this.rdb1otro.CheckedChanged += new System.EventHandler(this.rdb1otro_CheckedChanged);
+            // 
             // chk1datos
             // 
             this.chk1datos.AutoSize = true;
@@ -808,51 +864,6 @@
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nacionalidad";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sexo";
-            // 
-            // rdb1otro
-            // 
-            this.rdb1otro.AutoSize = true;
-            this.rdb1otro.Location = new System.Drawing.Point(3, 62);
-            this.rdb1otro.Name = "rdb1otro";
-            this.rdb1otro.Size = new System.Drawing.Size(45, 17);
-            this.rdb1otro.TabIndex = 1;
-            this.rdb1otro.TabStop = true;
-            this.rdb1otro.Text = "Otro";
-            this.rdb1otro.UseVisualStyleBackColor = true;
-            this.rdb1otro.CheckedChanged += new System.EventHandler(this.rdb1otro_CheckedChanged);
-            // 
-            // rdb1femenino
-            // 
-            this.rdb1femenino.AutoSize = true;
-            this.rdb1femenino.Location = new System.Drawing.Point(3, 39);
-            this.rdb1femenino.Name = "rdb1femenino";
-            this.rdb1femenino.Size = new System.Drawing.Size(71, 17);
-            this.rdb1femenino.TabIndex = 1;
-            this.rdb1femenino.TabStop = true;
-            this.rdb1femenino.Text = "Femenino";
-            this.rdb1femenino.UseVisualStyleBackColor = true;
-            this.rdb1femenino.CheckedChanged += new System.EventHandler(this.rdb1femenino_CheckedChanged);
-            // 
-            // rdb1masculino
-            // 
-            this.rdb1masculino.AutoSize = true;
-            this.rdb1masculino.Location = new System.Drawing.Point(3, 16);
-            this.rdb1masculino.Name = "rdb1masculino";
-            this.rdb1masculino.Size = new System.Drawing.Size(73, 17);
-            this.rdb1masculino.TabIndex = 1;
-            this.rdb1masculino.TabStop = true;
-            this.rdb1masculino.Text = "Masculino";
-            this.rdb1masculino.UseVisualStyleBackColor = true;
-            this.rdb1masculino.CheckedChanged += new System.EventHandler(this.rdb1masculino_CheckedChanged);
             // 
             // txt1apellido2
             // 
@@ -1124,6 +1135,16 @@
             this.txt3monto.Size = new System.Drawing.Size(100, 20);
             this.txt3monto.TabIndex = 1;
             // 
+            // btn3calc
+            // 
+            this.btn3calc.Location = new System.Drawing.Point(311, 47);
+            this.btn3calc.Name = "btn3calc";
+            this.btn3calc.Size = new System.Drawing.Size(75, 23);
+            this.btn3calc.TabIndex = 2;
+            this.btn3calc.Text = "Calcular";
+            this.btn3calc.UseVisualStyleBackColor = true;
+            this.btn3calc.Click += new System.EventHandler(this.btn3calc_Click);
+            // 
             // txt3interes
             // 
             this.txt3interes.Location = new System.Drawing.Point(133, 28);
@@ -1175,16 +1196,6 @@
             this.btn3cls.Text = "Nuevo";
             this.btn3cls.UseVisualStyleBackColor = true;
             this.btn3cls.Click += new System.EventHandler(this.btn3cls_Click);
-            // 
-            // btn3calc
-            // 
-            this.btn3calc.Location = new System.Drawing.Point(311, 47);
-            this.btn3calc.Name = "btn3calc";
-            this.btn3calc.Size = new System.Drawing.Size(75, 23);
-            this.btn3calc.TabIndex = 2;
-            this.btn3calc.Text = "Calcular";
-            this.btn3calc.UseVisualStyleBackColor = true;
-            this.btn3calc.Click += new System.EventHandler(this.btn3calc_Click);
             // 
             // txt3tiempo
             // 
@@ -1680,11 +1691,11 @@
             // lbl7azul
             // 
             this.lbl7azul.AutoSize = true;
-            this.lbl7azul.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7azul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl7azul.ForeColor = System.Drawing.Color.Blue;
             this.lbl7azul.Location = new System.Drawing.Point(47, 91);
             this.lbl7azul.Name = "lbl7azul";
-            this.lbl7azul.Size = new System.Drawing.Size(116, 31);
+            this.lbl7azul.Size = new System.Drawing.Size(98, 29);
             this.lbl7azul.TabIndex = 0;
             this.lbl7azul.Text = "El Real";
             // 
@@ -1700,11 +1711,11 @@
             // lbl7rojo
             // 
             this.lbl7rojo.AutoSize = true;
-            this.lbl7rojo.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl7rojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl7rojo.ForeColor = System.Drawing.Color.Red;
             this.lbl7rojo.Location = new System.Drawing.Point(47, 91);
             this.lbl7rojo.Name = "lbl7rojo";
-            this.lbl7rojo.Size = new System.Drawing.Size(116, 31);
+            this.lbl7rojo.Size = new System.Drawing.Size(98, 29);
             this.lbl7rojo.TabIndex = 0;
             this.lbl7rojo.Text = "El Real";
             // 
@@ -1895,17 +1906,6 @@
             this.tm7timer2.Interval = 500;
             this.tm7timer2.Tick += new System.EventHandler(this.tm7timer2_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.rdb1masculino);
-            this.panel1.Controls.Add(this.rdb1femenino);
-            this.panel1.Controls.Add(this.rdb1otro);
-            this.panel1.Location = new System.Drawing.Point(119, 18);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(75, 86);
-            this.panel1.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1929,6 +1929,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1965,8 +1967,6 @@
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

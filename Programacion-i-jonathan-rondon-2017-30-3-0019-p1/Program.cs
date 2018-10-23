@@ -16,7 +16,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Entrada());
         }
     }
 }
