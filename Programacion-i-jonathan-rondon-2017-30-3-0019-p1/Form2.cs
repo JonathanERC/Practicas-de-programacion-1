@@ -117,5 +117,70 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             cb2div.Items.Clear();
             txt2numero.Clear();
         }
+
+        private void txt3calcular_Click(object sender, EventArgs e)
+        {
+            //Declaracion de variables
+            int numalumnos;
+            double nota, sumanotas, notabaja, promedio;
+            if (txt3alumnos.Text != "")
+            {
+                //Etrada de datos
+                numalumnos = Convert.ToInt32(txt3alumnos.Text);
+                //Inicializar
+                sumanotas = 0.0;
+                notabaja = 20.0;
+                for (int i = 1; i <= numalumnos; i++)
+                {
+                    nota = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese nota del alumno" + i, "Promedio Notas", "16",100,100));
+                    sumanotas = sumanotas + nota;
+                    if (nota<notabaja)
+                    {
+                        notabaja = nota;
+                    }
+                }
+                promedio = sumanotas / numalumnos;
+                //Salida de informacion
+                txt3promedio.Text = Convert.ToString(promedio);
+                txt3notabaja.Text = Convert.ToString(notabaja);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número válido", "Promedio Notas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn3nuevo_Click(object sender, EventArgs e)
+        {
+            txt3alumnos.Clear();
+            txt3notabaja.Clear();
+            txt3promedio.Clear();
+        }
+
+        private void btn4ingresar_Click(object sender, EventArgs e)
+        {
+            //Declaracion de variables
+            int alumnos, nota;
+            double promedio = 0;
+            //Entrada de datos
+            alumnos = Convert.ToInt32(txt4alumnos.Text);
+            //Proceso
+            for (int i = 1; i <= alumnos; i++)
+            {
+                do
+                {
+                    nota = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Ingrese nota del alumno " + i, "Registro Notas"));
+                } while (nota < 0 || nota > 20);
+                promedio = promedio + nota;
+            }
+            //Salida
+            txt4promedio.Text = Convert.ToString(promedio / alumnos);
+        }
+
+        private void btn4nuevo_Click(object sender, EventArgs e)
+        {
+            txt4alumnos.Clear();
+            txt4promedio.Clear();
+        }
     }
 }
