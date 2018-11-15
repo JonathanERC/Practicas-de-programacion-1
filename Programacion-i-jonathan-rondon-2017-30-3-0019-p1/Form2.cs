@@ -182,5 +182,118 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             txt4alumnos.Clear();
             txt4promedio.Clear();
         }
+
+        private void btn5ingresar_Click(object sender, EventArgs e)
+        {
+            //Declrar variables
+            int stock, cantpersonas, cantentrega;
+            //Entrada de datos
+            stock = Convert.ToInt32(txt5inicial.Text);
+            cantpersonas = 0;
+            //Proceso
+            while (stock>=10)
+            {
+                cantentrega = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Ingrese cantidad entregada persona "+(cantpersonas+1), "Reparto de vacunas"));
+                if (stock>=cantentrega)
+                {
+                    cantpersonas = cantpersonas + 1;
+                    stock = stock - cantentrega;
+                }
+                else
+                {
+                    MessageBox.Show("No hay suficiente Stock", "Reparto de Vacunas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            MessageBox.Show("El Stock es inferior a 10 unidades","Reparto de Vacunas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            //Salida
+            txt5stock.Text = Convert.ToString(stock);
+            txt5personas.Text = Convert.ToString(cantpersonas);
+        }
+
+        private void btn5nuevo_Click(object sender, EventArgs e)
+        {
+            txt5inicial.Clear();
+            txt5personas.Clear();
+            txt5stock.Clear();
+        }
+
+        private void btn6vector_Click(object sender, EventArgs e)
+        {
+            //Declarar variables
+            int[] notas = new int[5];
+            //Inicio
+            notas[0] = 15;
+            notas[1] = 13;
+            notas[2] = 11;
+            notas[3] = 16;
+            notas[4] = 18;
+            //Proceso
+            int suma = 0;
+            double promedio;
+
+            cb6notas.Items.Clear();
+            for (int i = 0; i <= 4; i++)
+            {
+                cb6notas.Items.Add(notas[i]);
+                suma = suma + notas[i];
+            }
+            promedio = suma / 5;
+            //Salida
+            txt6promedio.Text = Convert.ToString(promedio);
+        }
+
+        private void btn6nuevo_Click(object sender, EventArgs e)
+        {
+            txt6promedio.Clear();
+            cb6notas.Items.Clear();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn7calcular_Click(object sender, EventArgs e)
+        {
+            //Declaracion
+            double[] vgastos;
+            double gasto, totalgasto, diamayor, gastomayor;
+            int cantdias;
+            //Inicio
+            totalgasto = 0;
+            diamayor = 1;
+            gastomayor = 0;
+            //proceso
+            cantdias = Convert.ToInt32(txt7dias.Text);
+            vgastos = new double[cantdias];
+            for (int dia = 1; dia <= cantdias; dia++)
+            {
+               gasto = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese el gasto del dia "+dia,"Gastos"));
+                vgastos[dia - 1] = gasto;
+            }
+            for (int i = 0; i < cantdias; i++)
+            {
+                if (vgastos[i]>gastomayor)
+                {
+                    gastomayor = vgastos[i];
+                    diamayor = i + 1;
+                }
+                totalgasto = totalgasto + vgastos[i];
+                cb7gastos.Items.Add("Día "+(i+1)+" Total: "+vgastos[i]);
+            }
+            //Salida
+            txt7mayorgasto.Text = Convert.ToString("RD$ "+gastomayor);
+            txt7mayordia.Text = Convert.ToString("Día "+diamayor);
+            txt7gastos.Text = Convert.ToString("RD$ "+totalgasto);
+        }
+
+        private void btn7nuevo_Click(object sender, EventArgs e)
+        {
+            txt7dias.Clear();
+            txt7gastos.Clear();
+            txt7mayordia.Clear();
+            txt7mayorgasto.Clear();
+            cb7gastos.Items.Clear();
+        }
     }
 }
