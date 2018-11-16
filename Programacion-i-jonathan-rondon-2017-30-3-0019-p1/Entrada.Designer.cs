@@ -40,7 +40,7 @@
             this.btnentrada1.Name = "btnentrada1";
             this.btnentrada1.Size = new System.Drawing.Size(120, 50);
             this.btnentrada1.TabIndex = 0;
-            this.btnentrada1.Text = "Primera Sección";
+            this.btnentrada1.Text = "Primer Parcial";
             this.btnentrada1.UseVisualStyleBackColor = true;
             this.btnentrada1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -50,7 +50,7 @@
             this.btnentrada2.Name = "btnentrada2";
             this.btnentrada2.Size = new System.Drawing.Size(120, 50);
             this.btnentrada2.TabIndex = 0;
-            this.btnentrada2.Text = "Segunda Sección";
+            this.btnentrada2.Text = "Segundo Parcial";
             this.btnentrada2.UseVisualStyleBackColor = true;
             this.btnentrada2.Click += new System.EventHandler(this.button2_Click);
             // 

@@ -21,6 +21,39 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             btn8vender.Enabled = false;
             txt8precio.Enabled = false;
             txt8disponible.Enabled = false;
+            desactivarcontroles();
+        }
+        //Form 11
+        private double monto;
+        private void acivarcontroles()
+        {
+            txt11cliente.Enabled = false;
+            txt11monto.Enabled = false;
+            btn11cuenta.Enabled = false;
+            btn11deposito.Enabled = true;
+            btn11retiro.Enabled = true;
+        }
+        private void desactivarcontroles()
+        {
+            txt11cliente.Enabled = true;
+            txt11monto.Enabled = true;
+            btn11cuenta.Enabled = true;
+            btn11deposito.Enabled = false;
+            btn11retiro.Enabled = false;
+        }
+        //Form 0
+        private int _numero1;
+        public int Numero1
+        {
+            get { return _numero1; }
+            set { _numero1 = value; }
+        }
+
+        private int _numero2;
+        public int Numero2
+        {
+            get { return _numero2; }
+            set { _numero2 = value; }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -41,7 +74,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
         {
             bool no_error = true;
 
-            if (txt1nombre.Text==string.Empty)
+            if (txt1nombre.Text == string.Empty)
             {
                 erroricono.SetError(txt1nombre, "Ingrese su Nombre y Apellido");
                 no_error = false;
@@ -49,25 +82,25 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             else
             {
                 try
-                    {
+                {
                     int i = Convert.ToInt32(txt1edad.Text);
-                    }
+                }
                 catch
-                    {
+                {
                     erroricono.Clear();
                     erroricono.SetError(txt1edad, "Ingrese Edad");
                     return false;
-                    }
+                }
                 try
-                    {
+                {
                     double j = Convert.ToDouble(txt1salario.Text);
-                    }
+                }
                 catch
-                    {
+                {
                     erroricono.Clear();
                     erroricono.SetError(txt1salario, "Ingrese un Salario válido");
                     return false;
-                    }
+                }
             }
             return no_error;
         }
@@ -98,7 +131,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             cb2mult.Items.Clear();
             cb2div.Items.Clear();
             //Bucle
-            for (int i = 1; i <=12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 suma = numero + i;
                 resta = numero - i;
@@ -135,9 +168,9 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
                 notabaja = 20.0;
                 for (int i = 1; i <= numalumnos; i++)
                 {
-                    nota = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese nota del alumno" + i, "Promedio Notas", "16",100,100));
+                    nota = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese nota del alumno" + i, "Promedio Notas", "16", 100, 100));
                     sumanotas = sumanotas + nota;
-                    if (nota<notabaja)
+                    if (nota < notabaja)
                     {
                         notabaja = nota;
                     }
@@ -194,10 +227,10 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             stock = Convert.ToInt32(txt5inicial.Text);
             cantpersonas = 0;
             //Proceso
-            while (stock>=10)
+            while (stock >= 10)
             {
-                cantentrega = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Ingrese cantidad entregada persona "+(cantpersonas+1), "Reparto de vacunas"));
-                if (stock>=cantentrega)
+                cantentrega = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Ingrese cantidad entregada persona " + (cantpersonas + 1), "Reparto de vacunas"));
+                if (stock >= cantentrega)
                 {
                     cantpersonas = cantpersonas + 1;
                     stock = stock - cantentrega;
@@ -207,7 +240,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
                     MessageBox.Show("No hay suficiente Stock", "Reparto de Vacunas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            MessageBox.Show("El Stock es inferior a 10 unidades","Reparto de Vacunas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("El Stock es inferior a 10 unidades", "Reparto de Vacunas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //Salida
             txt5stock.Text = Convert.ToString(stock);
             txt5personas.Text = Convert.ToString(cantpersonas);
@@ -271,23 +304,23 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             vgastos = new double[cantdias];
             for (int dia = 1; dia <= cantdias; dia++)
             {
-               gasto = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese el gasto del dia "+dia,"Gastos"));
+                gasto = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese el gasto del dia " + dia, "Gastos"));
                 vgastos[dia - 1] = gasto;
             }
             for (int i = 0; i < cantdias; i++)
             {
-                if (vgastos[i]>gastomayor)
+                if (vgastos[i] > gastomayor)
                 {
                     gastomayor = vgastos[i];
                     diamayor = i + 1;
                 }
                 totalgasto = totalgasto + vgastos[i];
-                cb7gastos.Items.Add("Día "+(i+1)+" Total: "+vgastos[i]);
+                cb7gastos.Items.Add("Día " + (i + 1) + " Total: " + vgastos[i]);
             }
             //Salida
-            txt7mayorgasto.Text = Convert.ToString("RD$ "+gastomayor);
-            txt7mayordia.Text = Convert.ToString("Día "+diamayor);
-            txt7gastos.Text = Convert.ToString("RD$ "+totalgasto);
+            txt7mayorgasto.Text = Convert.ToString("RD$ " + gastomayor);
+            txt7mayordia.Text = Convert.ToString("Día " + diamayor);
+            txt7gastos.Text = Convert.ToString("RD$ " + totalgasto);
         }
 
         private void btn7nuevo_Click(object sender, EventArgs e)
@@ -312,7 +345,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
                 mplatos[i, 2] = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Stock del plato " + (i + 1), "Restaurante");
             }
         }
-        
+
         //Declarar Form8
         private string[,] mplatos;
         private int cantplatos;
@@ -332,18 +365,18 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             //Inicio
             for (int i = 0; i < cantplatos; i++)
             {
-                if (mplatos[i,0].Equals(plato))
+                if (mplatos[i, 0].Equals(plato))
                 {
                     txt8precio.Text = mplatos[i, 1];
-                    txt8disponible.Text = mplatos[i,2];
+                    txt8disponible.Text = mplatos[i, 2];
                     index = i;
                     btn8vender.Enabled = true;
                     encuentra = 1;
                 }
             }
-            if (encuentra==0)
+            if (encuentra == 0)
             {
-                MessageBox.Show("No existe el plato","Restaurante",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No existe el plato", "Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btn8vender.Enabled = false;
             }
         }
@@ -355,13 +388,13 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             //Entrada
             cant = Convert.ToInt32(txt8cantidad.Text);
             stock = Convert.ToInt32(txt8disponible.Text);
-            if (cant<=stock)
+            if (cant <= stock)
             {
                 mplatos[index, 2] = Convert.ToString(stock - cant);
             }
             else
             {
-                MessageBox.Show("No hay suficiente Stock","Restaurante",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("No hay suficiente Stock", "Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -393,11 +426,11 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             string cadena = txt9cadena.Text;
             //Inicio
             txt9longitud.Text = Convert.ToString(cadena.Length);
-            txt9pricaracter.Text = cadena.Substring(0,1);
-            txt9ultcaracter.Text = cadena.Substring(cadena.Length-1,1);
+            txt9pricaracter.Text = cadena.Substring(0, 1);
+            txt9ultcaracter.Text = cadena.Substring(cadena.Length - 1, 1);
             txt9mayus.Text = cadena.ToUpper();
             txt9minus.Text = cadena.ToLower();
-            txt9noespacios.Text = cadena.Replace(" ","");
+            txt9noespacios.Text = cadena.Replace(" ", "");
             if (cadena.Contains("A"))
             {
                 txt91a.Text = Convert.ToString(cadena.IndexOf("A", 0) + 1);
@@ -415,6 +448,179 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             {
                 txt926caracter.Text = Convert.ToString("No hay suficientes caracteres");
             }
+        }
+
+        private void btn0limpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+        //Procedimiento form 0
+        struct cliente
+        {
+            public string nombre;
+            public string apellidos;
+            public string telefono;
+        }
+        private double operaciones(int num1, int num2, string op)
+        {
+            double resultado;
+            if (op == "s")
+            {
+                resultado = num1 + num2;
+            }
+            else if (op == "r")
+            {
+                resultado = num1 - num2;
+            }
+            else if (op == "m")
+            {
+                resultado = num1 * num2;
+            }
+            else
+            {
+                resultado = num1 / num2;
+            }
+            return resultado;
+        }
+
+        private void limpiar()
+        {
+            txt0num1.Clear();
+            txt0num2.Clear();
+            txt0resultado.Clear();
+        }
+
+        private int sumar(int num1, int num2)
+        {
+            int resultado;
+            resultado = num1 + num2;
+            return resultado;
+        }
+
+        private void btn0sum_Click(object sender, EventArgs e)
+        {
+            int suma, numero1, numero2;
+            //Entrada
+            numero1 = Convert.ToInt32(txt0num1.Text);
+            numero2 = Convert.ToInt32(txt0num2.Text);
+            suma = sumar(numero1, numero2);
+            txt0resultado.Text = Convert.ToString(suma);
+        }
+
+        private void btn0rest_Click(object sender, EventArgs e)
+        {
+            int numero1, numero2;
+            double resultado;
+
+            numero1 = Convert.ToInt32(txt0num1.Text);
+            numero2 = Convert.ToInt32(txt0num2.Text);
+            resultado = operaciones(numero1, numero2, "r");
+            txt0resultado.Text = Convert.ToString(resultado);
+        }
+
+        private void btn0mult_Click(object sender, EventArgs e)
+        {
+            int numero1, numero2;
+            double resultado;
+
+            numero1 = Convert.ToInt32(txt0num1.Text);
+            numero2 = Convert.ToInt32(txt0num2.Text);
+            resultado = operaciones(numero1, numero2, "m");
+            txt0resultado.Text = Convert.ToString(resultado);
+        }
+
+        private void btn0div_Click(object sender, EventArgs e)
+        {
+            int numero1, numero2;
+            double resultado;
+
+            numero1 = Convert.ToInt32(txt0num1.Text);
+            numero2 = Convert.ToInt32(txt0num2.Text);
+            resultado = operaciones(numero1, numero2, "d");
+            txt0resultado.Text = Convert.ToString(resultado);
+        }
+
+        private void btn0prop_Click(object sender, EventArgs e)
+        {
+            Numero1 = 10;
+            Numero2 = 30;
+            int suma;
+            suma = Numero1 + Numero2;
+            txt0resultado.Text = Convert.ToString("La propiedad es: " + suma);
+        }
+
+        private void btn0estructura_Click(object sender, EventArgs e)
+        {
+            cliente cliente1;
+            cliente1.nombre = "Jonathan";
+            cliente1.apellidos = "Rondón";
+            cliente1.telefono = "829-686-7410";
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn11cuenta_Click(object sender, EventArgs e)
+        {
+            string cliente;
+            //Inicio
+            cliente = txt11cliente.Text;
+            monto = Convert.ToDouble(txt11monto.Text);
+            if (monto > 0)
+            {
+                acivarcontroles();
+            }
+            else
+            {
+                MessageBox.Show("El monto debe ser mayor o igual a cero", "Gestión de ahorros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private double leer(string mensaje)
+        {
+            double cantidad;
+            cantidad=Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Ingrese monto a "+mensaje,"Gestión de ahorros","0",100,0));
+            return cantidad;
+        }
+
+        private void btn11deposito_Click(object sender, EventArgs e)
+        {
+            double deposito;
+            deposito = leer("Depositar");
+            monto = monto + deposito;
+            lb111.Items.Add(deposito);
+            mostrar();
+        }
+        private void mostrar()
+        {
+            txt11saldo.Text = Convert.ToString(monto);
+        }
+
+        private void btn11retiro_Click(object sender, EventArgs e)
+        {
+            double retiro;
+            retiro = leer("Retirar");
+            if (retiro <=monto)
+            {
+                monto = monto - retiro;
+                lb112.Items.Add(retiro);
+                mostrar();
+            }
+            else
+            {
+                MessageBox.Show("Cantidad de retiro es mayor que el monto disponible","Gestión de ahorros",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn11nuevo_Click(object sender, EventArgs e)
+        {
+            txt11cliente.Clear();
+            txt11monto.Clear();
+            txt11saldo.Clear();
+            lb111.Items.Clear();
+            lb112.Items.Clear();
+            desactivarcontroles();
         }
     }
 }

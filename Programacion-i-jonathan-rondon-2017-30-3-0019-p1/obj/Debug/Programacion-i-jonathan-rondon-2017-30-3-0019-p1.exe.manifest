@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe" size="706560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe" size="716200">
       <assemblyIdentity name="Programacion-i-jonathan-rondon-2017-30-3-0019-p1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fY/i/M5NYspfTFn95E2DMKkTf98RF+MYBlu6QSJt3P8=</dsig:DigestValue>
+        <dsig:DigestValue>C42kckLjhjCFz4O4M8O/UtUOdLkblMLl3OubaCjE2QU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

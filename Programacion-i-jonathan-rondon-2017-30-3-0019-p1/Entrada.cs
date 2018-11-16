@@ -26,7 +26,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 _ver = new Form2();
-            _ver.ShowDialog();
+            _ver.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
