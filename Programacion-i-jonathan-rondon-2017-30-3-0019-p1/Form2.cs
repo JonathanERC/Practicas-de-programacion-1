@@ -18,6 +18,9 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             this.ttmensaje.SetToolTip(this.txt1nombre, "Ingrese su Nombre y su Apellido");
             this.ttmensaje.SetToolTip(this.txt1edad, "Ingrese su Edad");
             this.ttmensaje.SetToolTip(this.txt1salario, "Ingrese su Salario");
+            btn8vender.Enabled = false;
+            txt8precio.Enabled = false;
+            txt8disponible.Enabled = false;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -294,6 +297,124 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             txt7mayordia.Clear();
             txt7mayorgasto.Clear();
             cb7gastos.Items.Clear();
+        }
+
+        private void btn8datos_Click(object sender, EventArgs e)
+        {
+            //Entrada
+            cantplatos = Convert.ToInt32(txt8cantplatos.Text);
+            //Inicio
+            mplatos = new string[cantplatos, 3];
+            for (int i = 0; i < cantplatos; i++)
+            {
+                mplatos[i, 0] = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Nombre del plato " + (i + 1), "Restaurante");
+                mplatos[i, 1] = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Precio del plato " + (i + 1), "Restaurante");
+                mplatos[i, 2] = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Stock del plato " + (i + 1), "Restaurante");
+            }
+        }
+        
+        //Declarar Form8
+        private string[,] mplatos;
+        private int cantplatos;
+        private int index;
+        private int encuentra = 0;
+        private void txt8disponible_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn8buscar_Click(object sender, EventArgs e)
+        {
+            //Variables
+            string plato;
+            //Entrada
+            plato = txt8plato.Text;
+            //Inicio
+            for (int i = 0; i < cantplatos; i++)
+            {
+                if (mplatos[i,0].Equals(plato))
+                {
+                    txt8precio.Text = mplatos[i, 1];
+                    txt8disponible.Text = mplatos[i,2];
+                    index = i;
+                    btn8vender.Enabled = true;
+                    encuentra = 1;
+                }
+            }
+            if (encuentra==0)
+            {
+                MessageBox.Show("No existe el plato","Restaurante",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                btn8vender.Enabled = false;
+            }
+        }
+
+        private void btn8vender_Click(object sender, EventArgs e)
+        {
+            //Variables
+            int cant, stock;
+            //Entrada
+            cant = Convert.ToInt32(txt8cantidad.Text);
+            stock = Convert.ToInt32(txt8disponible.Text);
+            if (cant<=stock)
+            {
+                mplatos[index, 2] = Convert.ToString(stock - cant);
+            }
+            else
+            {
+                MessageBox.Show("No hay suficiente Stock","Restaurante",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn8nuevo_Click(object sender, EventArgs e)
+        {
+            txt8cantidad.Clear();
+            txt8cantplatos.Clear();
+            txt8disponible.Clear();
+            txt8plato.Clear();
+            txt8precio.Clear();
+        }
+
+        private void btn9nuevo_Click(object sender, EventArgs e)
+        {
+            txt91a.Clear();
+            txt926caracter.Clear();
+            txt9cadena.Clear();
+            txt9longitud.Clear();
+            txt9mayus.Clear();
+            txt9minus.Clear();
+            txt9noespacios.Clear();
+            txt9pricaracter.Clear();
+            txt9ultcaracter.Clear();
+        }
+
+        private void btn9procesar_Click(object sender, EventArgs e)
+        {
+            //Variables
+            string cadena = txt9cadena.Text;
+            //Inicio
+            txt9longitud.Text = Convert.ToString(cadena.Length);
+            txt9pricaracter.Text = cadena.Substring(0,1);
+            txt9ultcaracter.Text = cadena.Substring(cadena.Length-1,1);
+            txt9mayus.Text = cadena.ToUpper();
+            txt9minus.Text = cadena.ToLower();
+            txt9noespacios.Text = cadena.Replace(" ","");
+            if (cadena.Contains("A"))
+            {
+                txt91a.Text = Convert.ToString(cadena.IndexOf("A", 0) + 1);
+            }
+            else
+            {
+                txt91a.Text = Convert.ToString("No hay 'A'");
+            }
+
+            if (cadena.Length >= 6)
+            {
+                txt926caracter.Text = cadena.Substring(1, 5);
+            }
+            else
+            {
+                txt926caracter.Text = Convert.ToString("No hay suficientes caracteres");
+            }
         }
     }
 }
