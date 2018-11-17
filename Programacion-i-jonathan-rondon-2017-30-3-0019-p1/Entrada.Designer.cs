@@ -32,6 +32,8 @@
             this.btnentrada1 = new System.Windows.Forms.Button();
             this.btnentrada2 = new System.Windows.Forms.Button();
             this.btnsalida = new System.Windows.Forms.Button();
+            this.btnentrada3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnentrada1
@@ -46,7 +48,7 @@
             // 
             // btnentrada2
             // 
-            this.btnentrada2.Location = new System.Drawing.Point(78, 126);
+            this.btnentrada2.Location = new System.Drawing.Point(78, 97);
             this.btnentrada2.Name = "btnentrada2";
             this.btnentrada2.Size = new System.Drawing.Size(120, 50);
             this.btnentrada2.TabIndex = 0;
@@ -64,12 +66,33 @@
             this.btnsalida.UseVisualStyleBackColor = true;
             this.btnsalida.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnentrada3
+            // 
+            this.btnentrada3.Location = new System.Drawing.Point(78, 153);
+            this.btnentrada3.Name = "btnentrada3";
+            this.btnentrada3.Size = new System.Drawing.Size(120, 50);
+            this.btnentrada3.TabIndex = 0;
+            this.btnentrada3.Text = "Segundo Parcial - C#YA";
+            this.btnentrada3.UseVisualStyleBackColor = true;
+            this.btnentrada3.Click += new System.EventHandler(this.btnentrada3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Jonathan Rondón";
+            // 
             // Entrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnsalida);
+            this.Controls.Add(this.btnentrada3);
             this.Controls.Add(this.btnentrada2);
             this.Controls.Add(this.btnentrada1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -78,6 +101,7 @@
             this.Name = "Entrada";
             this.Text = "Operador";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,5 +110,7 @@
         private System.Windows.Forms.Button btnentrada1;
         private System.Windows.Forms.Button btnentrada2;
         private System.Windows.Forms.Button btnsalida;
+        private System.Windows.Forms.Button btnentrada3;
+        private System.Windows.Forms.Label label1;
     }
 }

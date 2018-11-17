@@ -48,3 +48,27 @@ C:\Users\Estudiantes\Documents\Visual Studio 2013\Projects\Programacion-i-jonath
 C:\Users\Estudiantes\Documents\Visual Studio 2013\Projects\Programacion-i-jonathan-rondon-2017-30-3-0019-p1-master\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.csproj.GenerateResource.Cache
 C:\Users\Estudiantes\Documents\Visual Studio 2013\Projects\Programacion-i-jonathan-rondon-2017-30-3-0019-p1-master\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe.manifest
 C:\Users\Estudiantes\Documents\Visual Studio 2013\Projects\Programacion-i-jonathan-rondon-2017-30-3-0019-p1-master\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.application
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe.config
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe.manifest
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.application
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.pdb
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.csprojAssemblyReference.cache
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Entrada.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Form1.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Form2.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Properties.Resources.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.csproj.GenerateResource.cache
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.csproj.CoreCompileInputs.cache
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe.manifest
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.application
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.exe
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.pdb
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Clases.dll
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\bin\Debug\Clases.pdb
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion-i-jonathan-rondon-2017-30-3-0019-p1.csproj.CopyComplete
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.MDI.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Clientes.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Compras.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Ventas.resources
+C:\Users\jonat\source\repos\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\Programacion-i-jonathan-rondon-2017-30-3-0019-p1\obj\Debug\Programacion_i_jonathan_rondon_2017_30_3_0019_p1.Form3.resources

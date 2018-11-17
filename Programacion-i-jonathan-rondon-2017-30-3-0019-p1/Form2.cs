@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clases;
 
 namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
 {
@@ -621,6 +622,50 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
             lb111.Items.Clear();
             lb112.Items.Clear();
             desactivarcontroles();
+        }
+
+        private void btn12objeto1_Click(object sender, EventArgs e)
+        {
+            perro perrito = new perro();
+            perrito.Nombre = "Paco";
+            perrito.Raza = "Viralata";
+            perrito.Altura = "2";
+
+            txt12resultado.Text = perrito.comer("Carne");
+        }
+
+        private void btn12objeto2_Click(object sender, EventArgs e)
+        {
+            perro perrito = new perro();
+            perrito.Nombre = "Laika";
+            perrito.Altura = "3";
+
+            txt12resultado.Text = perrito.comer("Pollo");
+        }
+
+        private void btn12objeto3_Click(object sender, EventArgs e)
+        {
+            perro perrito = new perro("Cafe", "Chiguagua","0.5");
+            txt12resultado.Text = perrito.comer("Pan");
+        }
+
+        private void btn13guardar_Click(object sender, EventArgs e)
+        {
+            Vendedor vendedor1 = new Vendedor();
+            vendedor1.Apellidos = txt13apellido.Text;
+            vendedor1.Nombres = txt13nombre.Text;
+            vendedor1.Documento = txt13documento.Text;
+            vendedor1.Tipo = cb13tipo.Text;
+            vendedor1.Tipocontrato = cb13contrato.Text;
+
+            vendedor1.calcularsueldo(750);
+            dg13vendedores.Rows.Insert(0, vendedor1.Tipo,vendedor1.Apellidos,vendedor1.Nombres,vendedor1.Documento,vendedor1.Sueldo);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MDI _ver = new MDI();
+            _ver.Show();
         }
     }
 }

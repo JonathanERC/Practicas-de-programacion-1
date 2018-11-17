@@ -20,7 +20,7 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 _ver = new Form1();
-            _ver.ShowDialog();
+            _ver.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,6 +32,12 @@ namespace Programacion_i_jonathan_rondon_2017_30_3_0019_p1
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnentrada3_Click(object sender, EventArgs e)
+        {
+            Form3 _ver = new Form3();
+            _ver.Show();
         }
     }
 }
